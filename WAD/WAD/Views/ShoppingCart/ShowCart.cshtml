@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "ShowCart";
+    int index = 1;
+}
+
+<h2>ShowCart</h2>
+<table class="table">
+
+    <tr>
+        <td>Index</td>
+        <td>Image</td>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Quantity</td>
+        <td>Total Item Price</td>
+
+    </tr>
+    @foreach (var item in Model.Items.Values)
+    {
+        <tr>
+            <td>@index</td>
+            <td>@item.ProductName</td>
+            <td>
+                <img src="@item.ProductThumbnail" style="height: 100px; width: 100px">
+            </td>
+            <td>@item.ProductPrice</td>
+            @*<td>@item.Quantity</td>*@
+            <td>
+                <input type="text" value="@item.Quantity">
+            </td>
+
+            <td>@item.TotalItemPrice</td>
+
+
+        </tr>
+    }
+</table>
